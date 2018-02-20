@@ -1,11 +1,17 @@
 
-//import './../imports/utils.js';
+//I am importing meteor. It is important to do this before importing the Players (below)
+import {Meteor} from 'meteor/meteor';
 
-import {greetUser} from "../imports/utils";
-import add from "../imports/math";
+//Here I am importing the players variable from the imports/api/players.js file.
+import {Players} from './../imports/api/players';
 
+Meteor.startup(() => {
+    //we are taking
+    Players.insert({
+       name: 'Brock',
+       score: 50
 
-console.log(greetUser());
-console.log('Log from /server/main.js');
+    });
+    console.log(Players.find());
 
-console.log(add(2, 6));
+});
