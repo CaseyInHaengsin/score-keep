@@ -3,6 +3,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 
+import {Players} from './../imports/api/players';
+import {Tracker} from 'meteor/tracker';
+
+//The tracker function will take the queries and auto run them to refresh data.
+Tracker.autorun(() => {
+    console.log('Players List' + Players.find().fetch());
+
+
+});
+
+
+
 const players = [{
     _id: '1',
     name: 'Casey',
@@ -24,8 +36,6 @@ const renderPlayers = (playersList) => {
         return <p key={player._id}>{player.name} has {player.score} points</p>
 
     });
-    //console.log(newNumbers);
-
 
 };
 

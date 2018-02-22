@@ -1,14 +1,1 @@
 /* CSS declarations go here */
-
-*{
-    background-color: black;
-    color: white;
-}
-p{
-    background-color: green;
-    text-align: center;
-}
-#test{
-    color: white;
-    background-color: blue;
-}
