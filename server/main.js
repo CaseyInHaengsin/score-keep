@@ -12,6 +12,6 @@ Meteor.startup(() => {
        score: 50
 
     });
-    console.log(Players.find());
+    console.log(Players.find().fetch());
 
 });
