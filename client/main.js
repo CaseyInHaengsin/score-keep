@@ -15,6 +15,23 @@ const renderPlayers = (playersList) => {
     });
 
 };
+//e will let us access the player name and prevent the default refresh.
+const handleSubmit = (e) => {
+    let playerName = e.target.playerName.value; 
+    console.log(playerName);
+    //preventing the default behavior (refress)
+    e.preventDefault(); 
+    if (playerName){
+        e.target.playerName.value = ''; 
+        Players.insert({
+            name: playerName,
+            score: 0
+        })
+        
+    }
+
+
+};
 
 Meteor.startup(() => {
    //jsx lets us define our components markup in the same file
@@ -32,6 +49,10 @@ Meteor.startup(() => {
         <p>Hello {name}</p>
         <p>Hello again! Second Paragraph</p>
         {renderPlayers(players)}
+        <form onSubmit={handleSubmit}>
+            <input type='text' name='playerName' placeholder='Player Name'/>
+            <button>Add Player</button>
+        </form>
     </div>
 );
 
