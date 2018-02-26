@@ -2,32 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
-
-import {Players} from './../imports/api/players';
 import {Tracker} from 'meteor/tracker';
 
-//The tracker function will take the queries and auto run them to refresh data.
-Tracker.autorun(() => {
-    console.log('Players List' + Players.find().fetch());
-
-
-});
-
-
-
-const players = [{
-    _id: '1',
-    name: 'Casey',
-    score: 99
-}, {
-    _id: '2',
-    name: 'Brock',
-    score: -2
-}, {
-    _id: '3',
-    name: 'Sasha',
-    score: -12
-}];
+import {Players} from './../imports/api/players';
 
 const renderPlayers = (playersList) => {
     //let numbers = [{val: 1}, {val: 2}, {val: 3}];
@@ -41,16 +18,25 @@ const renderPlayers = (playersList) => {
 
 Meteor.startup(() => {
    //jsx lets us define our components markup in the same file
-    let name = 'Casey',
-        title = 'Score Keep'
-    let jsx = (
-        <div>
-            <h1 id='test'>{title}</h1>
-            <p>Hello {name}</p>
-            <p>Hello again! Second Paragraph</p>
-            {renderPlayers(players)}
-        </div>
-    );
+   //call tracker.autorun
+   //   create variable called players -> set equal to fetch query
+   Tracker.autorun(() => {
+    //console.log('Players List' + Players.find().fetch());
+    let players = Players.find().fetch();
 
-   ReactDOM.render(jsx, document.getElementById('app'));
+    let title = 'Score Keep';  
+    let name = 'Casey'; 
+    let jsx = (
+    <div>
+        <h1 id='test'>{title}</h1>
+        <p>Hello {name}</p>
+        <p>Hello again! Second Paragraph</p>
+        {renderPlayers(players)}
+    </div>
+);
+
+    ReactDOM.render(jsx, document.getElementById('app'));
+});
+
+    
 });

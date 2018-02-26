@@ -82,3 +82,5 @@ node_modules/
         ../../package-lock.json
         ../../public_html/
         ../../udacity-git-course/
+
+.vscode/

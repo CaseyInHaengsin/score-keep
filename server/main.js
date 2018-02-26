@@ -7,11 +7,11 @@ import {Players} from './../imports/api/players';
 
 Meteor.startup(() => {
     //we are taking
-    Players.insert({
-       name: 'Brock',
-       score: 50
+    // Players.insert({
+    //    name: 'Brock',
+    //    score: 50
 
-    });
-    console.log(Players.find());
+    // });
+    // console.log(Players.find().fetch());
 
 });
