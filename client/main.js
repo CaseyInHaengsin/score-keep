@@ -13,9 +13,7 @@ const renderPlayers = (playersList) => {
         return (
         <p key={player._id}>
         {player.name} has {player.score} points.
-        <button onClick={() => {
-            Players.remove({_id: player._id});
-        }}>X</button>
+        <button onClick={() => Players.remove({_id: player._id})}>X</button>
         </p>
         
     );
@@ -57,7 +55,7 @@ Meteor.startup(() => {
     let jsx = (
     <div>
         <h1 id='test'>{title}</h1>
-        <p>Hello {name}</p>
+        <p id='intro'>Hello {name}</p>
         <p>Hello again! Second Paragraph</p>
         {renderPlayers(players)}
         <form onSubmit={handleSubmit}>

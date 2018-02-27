@@ -1,1 +1,13 @@
 /* CSS declarations go here */
+*{
+    text-align: center; 
+    color: white; 
+    background-color: black;
+}
+
+#intro{
+    background-color: violet; 
+}
+h1{
+    background-color: #2CDBFF; 
+}
