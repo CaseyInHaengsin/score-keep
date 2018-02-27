@@ -59,13 +59,13 @@ Meteor.startup(() => {
     //console.log('Players List' + Players.find().fetch());
     let players = Players.find().fetch();
 
-    let title = 'Score Keep';  
+    let title = 'Score Keep App';  
     let name = 'Casey'; 
     let jsx = (
     <div>
         <h1 id='test'>{title}</h1>
         <p>Hello {name}</p>
-        <p>Hello again! Second Paragraph</p>
+        <p>Welcome to the Score Keep App</p>
         {renderPlayers(players)}
         <form onSubmit={handleSubmit}>
             <input type='text' name='playerName' placeholder='Player Name'/>
