@@ -10,7 +10,18 @@ const renderPlayers = (playersList) => {
     //let numbers = [{val: 1}, {val: 2}, {val: 3}];
 
     return playersList.map((player) => {
-        return <p key={player._id}>{player.name} has {player.score} points</p>
+        return (
+        <p key={player._id}>
+        {player.name} has {player.score} points.
+        <button onClick={() => {
+            Players.remove({_id: player._id});
+        }}>X</button>
+        </p>
+        
+    );
+        
+
+    
 
     });
 
