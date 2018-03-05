@@ -6,12 +6,27 @@ import {Meteor} from 'meteor/meteor';
 import {Players} from './../imports/api/players';
 
 Meteor.startup(() => {
-    //we are taking
-    // Players.insert({
-    //    name: 'Brock',
-    //    score: 50
+    //this is how to define a class. 
+    class Person {
+        constructor(name = 'John', age = 0) {
+            this.name = name; 
+            this.age = age;
+        }
+        getGreeting() {
+            return `Hi! I am ${this.name}`;
+        }
+        getAge() {
+            return `${this.name} is ${this.age}`;
+        }
 
-    // });
-    // console.log(Players.find().fetch());
+    };
+    //creating an instance of a class
+    let me = new Person();
+    console.log(me.getGreeting());
+
+    let person2 = new Person('Sasha', 30);
+
+    console.log(person2.getAge());
+    
 
 });

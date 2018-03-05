@@ -64,9 +64,10 @@ Meteor.startup(() => {
     let jsx = (
     <div>
         <h1 id='test'>{title}</h1>
-        <p>Hello {name}</p>
-        <p>Welcome to the Score Keep App</p>
+        <p id='intro'>Hello {name}</p>
+        <p>Hello again! Second Paragraph</p>
         {renderPlayers(players)}
+        
         <form onSubmit={handleSubmit}>
             <input type='text' name='playerName' placeholder='Player Name'/>
            
