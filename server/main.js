@@ -20,13 +20,51 @@ Meteor.startup(() => {
         }
 
     };
-    //creating an instance of a class
-    let me = new Person();
-    console.log(me.getGreeting());
 
-    let person2 = new Person('Sasha', 30);
+    //we are making a sub-class. We will extend person
+    class Employee extends Person {
+        constructor(name, age, title){
+            //super is a function that will use the constructor for the parent class
+            super(name, age); 
+            this.title = title;
+        }
+        getGreeting(){
+            if(this.title){
+                return `Hi, I am ${this.name}. I work as a ${this.title}. `
+            }
+            else{
+                //this let's us refer to the 
+                return super.getGreeting();
+            }
+        }
+        hasJob(){
+            return !!this.title;
+        }
 
-    console.log(person2.getAge());
+    }
+
+  //programmer class
+  //name, age, preferred language with default assembly
+  //override getGreeting for Programmer- should print I am a assembly developer
+
+  class Programmer extends Person{
+      constructor(name, age, preferredLanguage = 'Assembly'){
+          super(name, age);
+          this.preferredLanguage = preferredLanguage; 
+      }
+      getGreeting(){
+          if(this.preferredLanguage){
+              return `My name is ${this.name}. My preferred language is ${this.preferredLanguage}`; 
+          }
+          else{
+              return super.getGreeting();
+          }
+      }
+
+  }
     
+let userOne = new Programmer();
+console.log(userOne.getGreeting());
 
 });
+
