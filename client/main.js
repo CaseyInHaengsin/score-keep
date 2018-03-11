@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import {Tracker} from 'meteor/tracker';
+import TitleBar from './../imports/ui/TitleBar';
+import AddPlayer from './../imports/ui/AddPlayer';
 
 import {Players} from './../imports/api/players';
 
@@ -51,6 +53,8 @@ const handleSubmit = (e) => {
 
 };
 
+
+
 Meteor.startup(() => {
    //jsx lets us define our components markup in the same file
    //call tracker.autorun
@@ -63,11 +67,10 @@ Meteor.startup(() => {
     let name = 'Casey'; 
     let jsx = (
     <div>
-        <h1 id='test'>{title}</h1>
-        <p id='intro'>Hello {name}</p>
-        <p>Hello again! Second Paragraph</p>
+       <TitleBar/>
         {renderPlayers(players)}
-        
+        <AddPlayer/>
+
         <form onSubmit={handleSubmit}>
             <input type='text' name='playerName' placeholder='Player Name'/>
            
