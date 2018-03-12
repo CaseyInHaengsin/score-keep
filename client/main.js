@@ -63,11 +63,13 @@ Meteor.startup(() => {
     //console.log('Players List' + Players.find().fetch());
     let players = Players.find().fetch();
 
-    let title = 'Score Keep App';  
+    let title = 'Score Keep!';
+    let subTitle = 'I did it!';
     let name = 'Casey'; 
     let jsx = (
     <div>
-       <TitleBar/>
+       <TitleBar title={title} subTitle={subTitle}/>
+
         {renderPlayers(players)}
         <AddPlayer/>
 
