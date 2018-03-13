@@ -9,7 +9,6 @@ import AddPlayer from './../imports/ui/AddPlayer';
 import {Players} from './../imports/api/players';
 
 const renderPlayers = (playersList) => {
-    //let numbers = [{val: 1}, {val: 2}, {val: 3}];
 
     return playersList.map((player) => {
         return (
@@ -36,22 +35,7 @@ const renderPlayers = (playersList) => {
 
 };
 //e will let us access the player name and prevent the default refresh.
-const handleSubmit = (e) => {
-    let playerName = e.target.playerName.value; 
-    console.log(playerName);
-    //preventing the default behavior (refress)
-    e.preventDefault(); 
-    if (playerName){
-        e.target.playerName.value = ''; 
-        Players.insert({
-            name: playerName,
-            score: 0
-        })
-        
-    }
 
-
-};
 
 
 
@@ -68,16 +52,12 @@ Meteor.startup(() => {
     let name = 'Casey'; 
     let jsx = (
     <div>
-       <TitleBar title={title} subTitle={subTitle}/>
+       <TitleBar title={title}/>
 
         {renderPlayers(players)}
         <AddPlayer/>
 
-        <form onSubmit={handleSubmit}>
-            <input type='text' name='playerName' placeholder='Player Name'/>
-           
-            <button>Add Player</button>
-        </form>
+
     </div>
 );
 

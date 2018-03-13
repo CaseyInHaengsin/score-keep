@@ -6,9 +6,7 @@ import {Meteor} from 'meteor/meteor';
 import {Players} from './../imports/api/players';
 
 Meteor.startup(() => {
-    //this is how to define a class. 
-
-
+    //this is how to define a class.
 
 
 });
