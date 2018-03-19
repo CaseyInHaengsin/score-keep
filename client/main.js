@@ -5,17 +5,12 @@ import {Meteor} from 'meteor/meteor';
 import {Tracker} from 'meteor/tracker';
 import TitleBar from './../imports/ui/TitleBar';
 import AddPlayer from './../imports/ui/AddPlayer';
+import PlayerList from './../imports/ui/PlayerList';
 
 
 import {Players} from './../imports/api/players';
-import Player from './../imports/ui/Player';
-const renderPlayers = (playersList) => {
 
-    return playersList.map((player) => {
-        return <Player key={player._id} player={player}/>;
-    });
 
-};
 //e will let us access the player name and prevent the default refresh.
 
 
@@ -36,7 +31,8 @@ Meteor.startup(() => {
     <div>
        <TitleBar title={title}/>
 
-        {renderPlayers(players)}
+
+        <PlayerList players={players}/>
         <AddPlayer/>
 
 

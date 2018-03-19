@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 export default class Player extends React.Component {
     render() {
+
         return (
             <p key={this.props.player._id}>
                 {this.props.player.name} has {this.props.player.score} points.
