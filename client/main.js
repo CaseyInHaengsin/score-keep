@@ -22,11 +22,7 @@ Meteor.startup(() => {
    //   create variable called players -> set equal to fetch query
    Tracker.autorun(() => {
     //console.log('Players List' + Players.find().fetch());
-    let players = Players.find({}, {
-        sort: {
-            score: -1
-        }
-    }).fetch();
+    let players = Players.find({}, {sort: {score: -1}}).fetch();
     let title = 'Score Keep';
 
     ReactDOM.render(<App title={title} players={players}/>, document.getElementById('app'));
