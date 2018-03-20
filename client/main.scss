@@ -1,7 +1,31 @@
 /* CSS declarations go here */
-$blue: blue;
 
 
 *{
-    color: $blue;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.6%;
+}
+
+body{
+    color: #555555;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 2.4rem;
+}
+
+.title-bar{
+    background-color: #e35557;
+    color: white;
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 1.3rem;
 }
