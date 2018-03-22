@@ -11,8 +11,11 @@ export default class App extends React.Component {
         return (
             <div>
             <TitleBar title={this.props.title} subtitle="Created by Casey Rowley"/>
-            <PlayerList players={this.props.players}/>
-            <AddPlayer/>
+                {/* We want to center PlayerList*/}
+            <div className='wrapper'>
+                <PlayerList players={this.props.players}/>
+                <AddPlayer/>
+            </div>
             </div>
 
         );
