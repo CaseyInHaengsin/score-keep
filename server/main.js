@@ -11,3 +11,38 @@ Meteor.startup(() => {
 
 });
 
+//Object Spread Operator
+
+let user = {
+    name: 'Andrew',
+    location: 'Provo',
+    age: 0
+};
+
+
+
+//console.log(person);
+
+//Object Property shorthand
+/*let bike = "scott";
+let stuff = {
+    bike,
+    laptop: 'Mac'
+};*/
+//console.log(stuff);
+
+/*let house = {
+    bedrooms: 2,
+    bathrooms: 1.5
+};
+
+let yearBuilt = 2002;*/
+/*
+
+let challenge = {
+    ...house,
+    bedrooms: 3,
+    yearBuilt,
+    flooring: 'Carpet'
+};
+console.log(challenge);*/
