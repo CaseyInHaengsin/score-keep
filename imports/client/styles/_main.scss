@@ -1,5 +1,12 @@
 /* CSS declarations go here */
-
+$green: #e4ede0;
+$green-alt: darken($green, 15%);
+$blue: #dfe7ed;
+$blue-alt: darken($blue, 15%);
+//dfe7ed, darken by 15%
+//red- red-alt- #eddfdf
+$red: #eddfdf;
+$red-alt: darken($red, 15%);
 
 *{
   margin: 0;
